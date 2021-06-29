@@ -243,8 +243,8 @@ class P700(BasePrinter):
         self.io.write(b'M\x02')
         self._debug_status()
 
-        # Various mode
-        # self.io.write(b'\x1biM\x20')  # 20: 6th bit
+        # Various mode (enable auto cut)
+        self.io.write(b'\x1biM\x40')
         self._debug_status()
 
         # Advanced mode
